@@ -24,7 +24,7 @@ const exercises = [
     title: '簡單的 useState 使用，卻出現了「Cannot set properties of undefined」？',
     description: '使用 useState 時的常見錯誤',
     difficulty: '基礎',
-    status: '已完成',
+    status: '規劃中',
     category: '狀態管理'
   },
   {
@@ -69,21 +69,17 @@ function App() {
 
   if (selectedExercise) {
     return (
-      <div style={{ 
-        padding: '20px', 
-        fontFamily: 'Arial, sans-serif'
-      }}>
+      <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
         <button 
           onClick={() => setSelectedExercise(null)}
           style={{
-            backgroundColor: '#6c757d',
+            backgroundColor: '#95a5a6',
             color: 'white',
             padding: '10px 20px',
             border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
-            marginBottom: '20px',
-            textShadow: 'none'
+            marginBottom: '20px'
           }}
         >
           ← 回到題目列表
@@ -95,63 +91,15 @@ function App() {
           borderRadius: '8px',
           borderLeft: '4px solid #ffc107'
         }}>
-          <h2 style={{ 
-            margin: '0 0 10px 0', 
-            color: '#856404',
-            textShadow: 'none'
-          }}>
+          <h2 style={{ margin: '0 0 10px 0', color: '#856404' }}>
             {selectedExercise.id} - {selectedExercise.title}
           </h2>
-          <p style={{ 
-            margin: '0 0 15px 0', 
-            color: '#856404',
-            textShadow: 'none'
-          }}>
+          <p style={{ margin: '0', color: '#856404' }}>
             📁 請到 <code>exercises/{selectedExercise.id}/</code> 資料夾查看題目詳情
           </p>
-          
-          {/* GitHub 連結 */}
-          <div style={{ marginBottom: '15px' }}>
-            <a 
-              href={`https://github.com/Jeffrey0117/react-beginner-challenges/blob/main/exercises/${selectedExercise.id}/README.md`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#0066cc',
-                textDecoration: 'none',
-                fontSize: '14px',
-                padding: '8px 15px',
-                backgroundColor: 'white',
-                border: '1px solid #0066cc',
-                borderRadius: '4px',
-                display: 'inline-block',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#0066cc'
-                e.target.style.color = 'white'
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'white'
-                e.target.style.color = '#0066cc'
-              }}
-            >
-              🔗 查看 GitHub 題目詳情
-            </a>
-          </div>
-          
-          <div>
-            <h3 style={{ 
-              color: '#856404',
-              textShadow: 'none',
-              margin: '0 0 10px 0'
-            }}>操作步驟：</h3>
-            <ol style={{ 
-              color: '#856404',
-              textShadow: 'none',
-              margin: '0',
-              paddingLeft: '20px'
-            }}>
+          <div style={{ marginTop: '15px' }}>
+            <h3 style={{ color: '#856404' }}>操作步驟：</h3>
+            <ol style={{ color: '#856404' }}>
               <li>查看 <code>exercises/{selectedExercise.id}/README.md</code> 了解問題</li>
               <li>複製 <code>exercises/{selectedExercise.id}/problem/App.jsx</code> 到 <code>src/App.jsx</code> 測試問題</li>
               <li>嘗試自己解決問題</li>
@@ -236,8 +184,17 @@ function App() {
               backgroundColor: 'white',
               borderRadius: '8px',
               boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-              border: '1px solid #e9ecef',
-              cursor: 'pointer'
+              border: '1px solid #ecf0f1',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)'
+              e.target.style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'
+              e.target.style.transform = 'translateY(0)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>

@@ -71,7 +71,9 @@ function App() {
     return (
       <div style={{ 
         padding: '20px', 
-        fontFamily: 'Arial, sans-serif'
+        fontFamily: 'Arial, sans-serif',
+        backgroundColor: '#f8f9fa',
+        minHeight: '100vh'
       }}>
         <button 
           onClick={() => setSelectedExercise(null)}

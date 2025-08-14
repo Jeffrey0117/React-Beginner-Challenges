@@ -71,7 +71,9 @@ function App() {
     return (
       <div style={{ 
         padding: '20px', 
-        fontFamily: 'Arial, sans-serif'
+        fontFamily: 'Arial, sans-serif',
+        backgroundColor: '#f8f9fa',
+        minHeight: '100vh'
       }}>
         <button 
           onClick={() => setSelectedExercise(null)}
@@ -103,54 +105,20 @@ function App() {
             {selectedExercise.id} - {selectedExercise.title}
           </h2>
           <p style={{ 
-            margin: '0 0 15px 0', 
+            margin: '0', 
             color: '#856404',
             textShadow: 'none'
           }}>
             📁 請到 <code>exercises/{selectedExercise.id}/</code> 資料夾查看題目詳情
           </p>
-          
-          {/* GitHub 連結 */}
-          <div style={{ marginBottom: '15px' }}>
-            <a 
-              href={`https://github.com/Jeffrey0117/react-beginner-challenges/blob/main/exercises/${selectedExercise.id}/README.md`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#0066cc',
-                textDecoration: 'none',
-                fontSize: '14px',
-                padding: '8px 15px',
-                backgroundColor: 'white',
-                border: '1px solid #0066cc',
-                borderRadius: '4px',
-                display: 'inline-block',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#0066cc'
-                e.target.style.color = 'white'
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'white'
-                e.target.style.color = '#0066cc'
-              }}
-            >
-              🔗 查看 GitHub 題目詳情
-            </a>
-          </div>
-          
-          <div>
+          <div style={{ marginTop: '15px' }}>
             <h3 style={{ 
               color: '#856404',
-              textShadow: 'none',
-              margin: '0 0 10px 0'
+              textShadow: 'none'
             }}>操作步驟：</h3>
             <ol style={{ 
               color: '#856404',
-              textShadow: 'none',
-              margin: '0',
-              paddingLeft: '20px'
+              textShadow: 'none'
             }}>
               <li>查看 <code>exercises/{selectedExercise.id}/README.md</code> 了解問題</li>
               <li>複製 <code>exercises/{selectedExercise.id}/problem/App.jsx</code> 到 <code>src/App.jsx</code> 測試問題</li>
