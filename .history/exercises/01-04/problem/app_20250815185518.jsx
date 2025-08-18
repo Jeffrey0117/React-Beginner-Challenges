@@ -1,14 +1,3 @@
-# 04 - 避免重複的 handleChange
-
-## 題目說明
-
-請完成一個表單，包含三個欄位：`name`、`email`、`age`。
-starter code 為每個 input 都寫一個 `handleChange`，導致重複程式碼。
-請思考如何優化，讓程式更乾淨。
-
-### Starter Code
-
-```jsx
 import React, { useState } from "react";
 
 function Form() {
@@ -53,13 +42,3 @@ function Form() {
 }
 
 export default Form;
-```
-
----
-
-### 檔案路徑
-
-- 題目程式碼：`problem/app.jsx`
-- 解答程式碼：`solution/app.jsx`
-
----

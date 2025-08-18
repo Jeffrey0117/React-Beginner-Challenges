@@ -1,14 +1,46 @@
-# 04 - 避免重複的 handleChange
+import React, { useState } from "react";
 
-## 題目說明
+function Form() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    age: "",
+  });
 
-請完成一個表單，包含三個欄位：`name`、`email`、`age`。
-starter code 為每個 input 都寫一個 `handleChange`，導致重複程式碼。
-請思考如何優化，讓程式更乾淨。
+  function handleNameChange(e) {
+    setForm((prev) => ({ ...prev, name: e.target.value }));
+  }
+  function handleEmailChange(e) {
+    setForm((prev) => ({ ...prev, email: e.target.value }));
+  }
+  function handleAgeChange(e) {
+    setForm((prev) => ({ ...prev, age: e.target.value }));
+  }
 
-### Starter Code
+  return (
+    <form>
+      <input
+        name="name"
+        value={form.name}
+        onChange={handleNameChange}
+        placeholder="Name"
+      />
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleEmailChange}
+        placeholder="Email"
+      />
+      <input
+        name="age"
+        value={form.age}
+        onChange={handleAgeChange}
+        placeholder="Age"
+      />
+    </form>
+  );
+}
 
-```jsx
 import React, { useState } from "react";
 
 function Form() {
@@ -53,13 +85,3 @@ function Form() {
 }
 
 export default Form;
-```
-
----
-
-### 檔案路徑
-
-- 題目程式碼：`problem/app.jsx`
-- 解答程式碼：`solution/app.jsx`
-
----
